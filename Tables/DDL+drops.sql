@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Units;
 DROP TABLE IF EXISTS Soldiers;
 DROP TABLE If EXISTS Missions;
 
-ALTER TABLE Bases (
+CREATE TABLE Bases (
     Base_ID INTEGER,
     Base_Name VARCHAR(255),
     Location VARCHAR(255),
