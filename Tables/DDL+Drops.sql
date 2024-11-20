@@ -25,10 +25,10 @@ create table Tasks
  
 create table Permissions
 	(Permission_ID		integer,
-	 Soldier_ID			integer,
-	 Permission_Type	varchar(50),
+	Soldier_ID			integer,
+	Permission_Type	varchar(50),
      Start_Date 		date,
-	 primary key (Permission_ID),
+	primary key (Permission_ID),
      FOREIGN KEY (Soldier_ID) REFERENCES Soldiers(Soldier_ID)
 	);
     
