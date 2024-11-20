@@ -57,7 +57,7 @@ create table Equipments
      Base_ID			int, 
      Unit_ID_Uses		int, 
      Equipment_Type		varchar(100),
-     Equipment_model	varchar(100),
+     Equipment_Model	varchar(100),
      Quantity			int,
      PRIMARY KEY (Equipment_ID),
      FOREIGN KEY (Unit_ID_Uses) REFERENCES Units(Unit_ID_Uses)
@@ -75,14 +75,14 @@ CREATE TABLE Bases (
 );
 
 CREATE TABLE Units (
-    Unit_Id INTEGER,
-    Base_Id INTEGER,
+    Unit_ID INTEGER,
+    Base_ID INTEGER,
     Unit_Type VARCHAR(100),
     Unit_Model VARCHAR(100),
     Create_Year DATE,
     Missions_Number INTEGER,
-    PRIMARY KEY (Unit_Id),
-    FOREIGN KEY (Base_Id) REFERENCES Bases(Base_ID)
+    PRIMARY KEY (Unit_ID),
+    FOREIGN KEY (Base_ID) REFERENCES Bases(Base_ID)
 );
 
 CREATE TABLE Soldiers (
