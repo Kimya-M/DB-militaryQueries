@@ -1,4 +1,4 @@
-INSERT INTO Bases (Base_ID, Base_Name, Location, Soldire_Number, Have_Air_Defense, Commander) VALUES
+INSERT INTO Bases (Base_ID, Base_Name, Location, Soldier_Number, Have_Air_Defense, Commander) VALUES
 (1, 'Fort Bragg', 'North Carolina', 53000, true, 'General Michael Garrett'),
 (2, 'Fort Campbell', 'Kentucky', 27000, true, 'Major General Brian Winski'),
 (3, 'Fort Hood', 'Texas', 45000, true, 'Major General John Richardson IV'),
@@ -62,7 +62,7 @@ INSERT INTO Bases (Base_ID, Base_Name, Location, Soldire_Number, Have_Air_Defens
 
 
 
-INSERT INTO Soldires (Soldire_ID, Base_ID, Soldire_name, Rank, Join_Date, age, Mission_Number) VALUES
+INSERT INTO Soldiers (Soldier_ID, Base_ID, Soldier_Name, Rank, Join_Date, Age, Mission_Number) VALUES
 (1, 1, 'John Smith', 'Sergeant', '2020-01-15', 30, 5),
 (2, 1, 'Michael Johnson', 'Corporal', '2019-03-22', 28, 3),
 (3, 2, 'David Williams', 'Lieutenant', '2018-06-30', 35, 4),
@@ -187,7 +187,7 @@ INSERT INTO Soldires (Soldire_ID, Base_ID, Soldire_name, Rank, Join_Date, age, M
 
 
 
-INSERT INTO Units (Unit_ID, Base_ID, Unit_type, Unit_model, Create_Year, Missions_Number) VALUES
+INSERT INTO Units (Unit_ID, Base_ID, Unit_Type, Unit_Model, Create_Year, Missions_Number) VALUES
 (1, 1, 'Tank', 'M1 Abrams', '2010-05-15', 12),
 (2, 1, 'Helicopter', 'AH-64 Apache', '2015-03-20', 8),
 (3, 1, 'Aircraft', 'F-16 Fighting Falcon', '2018-07-11', 15),
@@ -372,7 +372,7 @@ INSERT INTO Units (Unit_ID, Base_ID, Unit_type, Unit_model, Create_Year, Mission
 
 
 
-INSERT INTO Equipments (Equipment_ID, Base_ID, Unit_ID_Uses, Equipment_type, Equipment_model, quantity) VALUES
+INSERT INTO Equipments (Equipment_ID, Base_ID, Unit_ID_Uses, Equipment_Type, Equipment_Model, Quantity) VALUES
 (1, 1, 1, 'Communication Equipment', 'Harris RF-7800', 20),
 (2, 1, 2, 'Weapon', 'M16 Rifle', 50),
 (3, 1, 3, 'Vehicle', 'Humvee', 15),
@@ -557,7 +557,7 @@ INSERT INTO Equipments (Equipment_ID, Base_ID, Unit_ID_Uses, Equipment_type, Equ
 
 
 
-INSERT INTO Missions (Mission_ID, Base_ID, Mission_Name, Start_Date, End_Date, Target, Soldires_lost, units_lost) VALUES
+INSERT INTO Missions (Mission_ID, Base_ID, Mission_Name, Start_Date, End_Date, Target, Soldiers_Lost, Units_Lost) VALUES
 (1, 1, 'Operation Desert Shield', '2022-01-10', '2022-01-20', 'Terrorist Base', 5, 2),
 (2, 1, 'Operation Freedom', '2022-02-15', '2022-02-25', 'Weapons Depot', 3, 1),
 (3, 1, 'Operation Black Hawk', '2022-03-05', '2022-03-15', 'Supply Line', 1, 0),
@@ -742,7 +742,7 @@ INSERT INTO Missions (Mission_ID, Base_ID, Mission_Name, Start_Date, End_Date, T
 
 
 
-INSERT INTO Tasks (Task_ID, Soldire_ID, Unit_ID, Mission_ID, Task_Name, Description, Status) VALUES
+INSERT INTO Tasks (Task_ID, Soldier_ID, Unit_ID, Mission_ID, Task_Name, Description, Status) VALUES
 (1, 1, 1, 1, 'Recon', 'Conduct reconnaissance in the area.', 'Pending'),
 (2, 1, 3, 2, 'Secure', 'Secure the perimeter.', 'In Progress'),
 (3, 2, 2, 3, 'Assault', 'Assault the enemy position.', 'Pending'),
@@ -1000,7 +1000,7 @@ INSERT INTO Reports (Report_ID, Reporter_ID, Mission_ID, Reporter_Name, Report_D
 (71, 47, 71, 'Frank', '2024-03-11', 'Report content for mission 71.'),
 (72, 48, 72, 'Grace', '2024-03-12', 'Report content for mission 72.'),
 (73, 49, 73, 'Hannah', '2024-03-13', 'Report content for mission 73.'),
-(74, 49 74, 'Alice', '2024-03-14', 'Report content for mission 74.'),
+(74, 49, 74, 'Alice', '2024-03-14', 'Report content for mission 74.'),
 (75, 49, 75, 'Alice', '2024-03-15', 'Report content for mission 75.'),
 (76, 51, 76, 'Bob', '2024-03-16', 'Report content for mission 76.'),
 (77, 51, 77, 'Charlie', '2024-03-17', 'Report content for mission 77.'),
@@ -1111,7 +1111,7 @@ INSERT INTO Reports (Report_ID, Reporter_ID, Mission_ID, Reporter_Name, Report_D
 
 
 
-INSERT INTO Permissions (Permission_ID, Soldire_ID, Permission_type, Start_Date) VALUES
+INSERT INTO Permissions (Permission_ID, Soldier_ID, Permission_Type, Start_Date) VALUES
 (1, 1, 'Annual Leave', '2024-01-01'),
 (2, 1, 'Sick Leave', '2024-01-15'),
 (3, 2, 'Annual Leave', '2024-01-02'),
@@ -1354,11 +1354,7 @@ INSERT INTO Permissions (Permission_ID, Soldire_ID, Permission_type, Start_Date)
 (240, 120, 'Sick Leave', '2024-05-13');
 
 
-
-
-
-
-INSERT INTO Attendance (Attendance_ID, Soldire_ID, Date, Status) VALUES
+INSERT INTO Attendance (Attendance_ID, Soldier_ID, Date, Status) VALUES
 (1, 1, '2024-01-01', true),
 (2, 1, '2024-01-02', false),
 (3, 2, '2024-01-01', true),
