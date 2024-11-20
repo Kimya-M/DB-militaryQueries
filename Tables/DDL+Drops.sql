@@ -33,8 +33,8 @@ create table Permissions
 	);
     
 create table Attendance
-	(Attendance_ID 		int,
-     Soldier_ID			int,
+	(Attendance_ID 		integer,
+     Soldier_ID			integer,
      Date				date,
      Status				boolean,
      Primary key (Attendance_ID),
@@ -42,9 +42,9 @@ create table Attendance
      );
 
 create table Reports
-	(Report_ID			int,
-     Reporter_ID		int,
-     Mission_ID 		int,
+	(Report_ID			integer,
+     Reporter_ID		integer,
+     Mission_ID 		integer,
      Reporter_Name		varchar(100),
      Report_Date		date,
      Content			text,
@@ -52,35 +52,35 @@ create table Reports
      FOREIGN KEY (Reporter_ID) REFERENCES Soldiers(Reporter_ID),
      FOREIGN KEY (Mission_ID) REFERENCES Missions(Mission_ID)
      );
+
 create table Equipments
-	(Equipment_ID		int,
-     Base_ID			int, 
-     Unit_ID_Uses		int, 
+	(Equipment_ID		integer,
+     Base_ID			integer, 
+     Unit_ID_Uses		integer, 
      Equipment_Type		varchar(100),
      Equipment_Model	varchar(100),
-     Quantity			int,
+     Quantity			integer,
      PRIMARY KEY (Equipment_ID),
      FOREIGN KEY (Unit_ID_Uses) REFERENCES Units(Unit_ID_Uses)
-     
-     );
+);
 
 CREATE TABLE Bases (
-    Base_ID INTEGER,
+    Base_ID integer,
     Base_Name VARCHAR(255),
     Location VARCHAR(255),
-    Soldier_Number INTEGER,
+    Soldier_Number integer,
     Have_Air_Defense BOOLEAN,
     Commander VARCHAR(100),
     PRIMARY KEY (Base_ID)
 );
 
 CREATE TABLE Units (
-    Unit_ID INTEGER,
-    Base_ID INTEGER,
+    Unit_ID integer,
+    Base_ID integer,
     Unit_Type VARCHAR(100),
     Unit_Model VARCHAR(100),
     Create_Year DATE,
-    Missions_Number INTEGER,
+    Missions_Number integer,
     PRIMARY KEY (Unit_ID),
     FOREIGN KEY (Base_ID) REFERENCES Bases(Base_ID)
 );
@@ -98,14 +98,14 @@ CREATE TABLE Soldiers (
 );
 
 CREATE TABLE Missions (
-    Mission_ID INT,
-    Base_ID INT,
+    Mission_ID integer,
+    Base_ID integer,
     Mission_Name VARCHAR(100),
     Start_Date DATE,
     End_Date DATE,
     Target VARCHAR(100),
-    Soldiers_Lost INT,
-    Units_Lost INT,
+    Soldiers_Lost integer,
+    Units_Lost integer,
     PRIMARY KEY (Mission_ID),
     FOREIGN KEY (Base_ID) REFERENCES Bases(Base_ID)
 );
