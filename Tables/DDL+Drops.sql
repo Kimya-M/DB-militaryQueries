@@ -49,7 +49,7 @@ create table Reports
      Report_Date		date,
      Content			text,
      primary key (Report_ID),
-     FOREIGN KEY (Reporter_ID) REFERENCES Soldiers(Reporter_ID),
+     FOREIGN KEY (Reporter_ID) REFERENCES Soldiers(Soldier_ID),
      FOREIGN KEY (Mission_ID) REFERENCES Missions(Mission_ID)
      );
 
