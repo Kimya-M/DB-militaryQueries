@@ -1,9 +1,10 @@
 SELECT e.Equipment_Type, e.Equipment_Model
-from Equipments e JOIN Units u on e.Unit_ID_Uses = u.Unit_ID 
-JOIN Missions m on m.Base_ID = u.Base_ID 
-JOIN Soldiers s on s.Base_ID = m.Mission_ID
-JOIN Bases b on b.Base_ID = S.Base_ID
-WHERE u.Missions_Number < 11 and 
-m.Target LIKE 'Enemy%' and
-s.Mission_Number >= 3 and
-b.Have_Air_Defense = 0
+FROM Equipments e   
+JOIN Units u ON e.Unit_ID_Uses = u.Unit_ID   
+JOIN Missions m ON m.Base_ID = u.Base_ID   
+JOIN Soldiers s ON s.Base_ID = m.Base_ID   
+JOIN Bases b ON b.Base_ID = s.Base_ID   
+WHERE u.Missions_Number < 11   
+  AND m.Target LIKE 'Enemy%'   
+  AND s.Mission_Number >= 3   
+  AND b.Have_Air_Defense = 0;
