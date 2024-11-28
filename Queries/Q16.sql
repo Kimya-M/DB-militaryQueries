@@ -1,6 +1,7 @@
 select avg(Soldiers.Age) as Average_Age
 FROM Soldiers
-NATURAL join Missions
+JOIN Tasks t ON t.Soldier_ID = Soldiers.Soldier_ID 
+join Missions on t.Mission_ID = Missions.Mission_ID
 where 1 <= (SELECT count(Attendance.Status)
             from Attendance
             where Attendance.Status = false 
